@@ -54,7 +54,7 @@ export default async function installPlugin(
 			"plugin/download/",
 			`${id}?device=${device.uuid}`,
 		);
-		if (purchaseToken) pluginUrl += `&token=${purchaseToken}`;
+		// token removed
 		pluginUrl += `&package=${BuildInfo.packageName}`;
 		pluginUrl += `&version=${device.version}`;
 
