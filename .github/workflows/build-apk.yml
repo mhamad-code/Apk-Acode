@@ -17,13 +17,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
           fetch-depth: 0
 
-      - name: Init submodules
+      - name: Verify codemirror
         run: |
-          git submodule sync --recursive
-          git submodule update --init --recursive
+          find codemirror-lsp-client -type f | wc -l
+          ls codemirror-lsp-client/
 
       - name: Setup Java
         uses: actions/setup-java@v4
